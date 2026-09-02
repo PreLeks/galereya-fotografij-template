@@ -45,32 +45,32 @@ body {
   background: #000;
 }
 
-.gallery {
-  max-width: 1920px;
-  width: 100%;
-  padding: 0 20px;
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 20px 15px;
   background: #F4F6F9;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-.gallery__header {
+.gallery__top {
+  padding-bottom: 36px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .gallery__title {
   margin: 0;
   font-weight: 700;
   font-size: 32px;
+  line-height: 100%;
   color: #111827;
 }
 
@@ -87,58 +87,65 @@ body {
   border-radius: 12px;
   border: none;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-.gallery__wrapper {
+.gallery__btn:hover {
+  background: #2a3b5f;
+}
+
+.gallery__list {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
 }
 
-.gallery__card {
-  padding: 0 0 24px 0;
+.gallery-card {
+  position: relative;
+  overflow: hidden;
   border-radius: 16px;
   background: #FFF;
 }
 
-.gallery__card-pic {
+.gallery-card__pic {
   max-width: 100%;
   display: block;
-  border-radius: 16px 16px 0 0;
 }
 
-.gallery__card-title {
+.gallery-card__text {
+  padding: 16px;
+}
+
+.gallery-card__title {
   margin: 0;
-  padding: 16px 16px 0 16px;
+  padding-bottom: 8px;
   font-weight: 600;
   font-size: 20px;
+  line-height: 100%;
   color: #111827;
 }
 
-.gallery__card-date {
-  padding: 8px 16px 0 16px;
+.gallery-card__time {
   font-weight: 400;
   font-size: 12px;
+  line-height: 100%;
   color: #6B7280;
 }
 
 @media (max-width: 768px) {
-  .gallery__wrapper {
+  .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
 }
 
 @media (max-width: 520px) {
-  .gallery__wrapper {
+  .grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  .gallery__card-pic {
+  .gallery-card__pic {
     width: 100%;
   }
 }
